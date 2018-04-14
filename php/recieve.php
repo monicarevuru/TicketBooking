@@ -13,7 +13,7 @@ if ( mysql_select_db("register") ) {
 	/*echo "Selected db succesfully";*/
 }
 $sql = "INSERT INTO `BookTickz`.`user`(`user_email` , `user_password`) VALUES ('$email','$password')";
-echo $sql;
+/*echo $sql;*/
 if ( mysql_query( $sql ) ) {
-	/*echo "Yay! Inserted";*/
+  /*echo "Yay! Inserted";*/
 }
