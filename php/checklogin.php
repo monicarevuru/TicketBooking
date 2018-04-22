@@ -18,8 +18,9 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		//echo "email and password didn't match";
 		//echo json_encode(array("success"=> "false"));
     $message = "Username and/or Password incorrect";
-    echo "<script type='text/javascript'>alert('$message');</script>";
-    //header("Location:/monicarevuru-TicketBooking/signin.html");
+  echo "<script type='text/javascript'>alert('$message');</script>";
+  //echo "hi";
+  //header("Location:/monicarevuru-TicketBooking/signin.html");
 
 
 	}
