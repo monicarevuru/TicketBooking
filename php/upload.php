@@ -1,22 +1,37 @@
 <?php
-include("config.php");
+$moviename=$_POST['mname'];
 
-        $image = $_FILES['insertimage']['tmp_name'];
+if(isset($_POST["submit"])){
+    $check = getimagesize($_FILES["image"]["tmp_name"]);
+    if($check !== false){
+        $image = $_FILES['image']['tmp_name'];
         $imgContent = addslashes(file_get_contents($image));
+
+
+        //DB details
+        $dbHost     = 'localhost';
+        $dbUsername = 'root';
+        $dbPassword = 'amma1234';
+        $dbName     = 'BookTickz';
+
+
+        $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+
         // Check connection
+       if($db->connect_error){
+            die("Connection failed: " . $db->connect_error);
+        }
                 $dataTime = date("Y-m-d H:i:s");
-                $moviename=$_GET['moviename'];
 
        //Insert image content into database
-       mysql_select_db($mysqldb);
-       //$insert = $conn->query("INSERT INTO BookTickz.image(name, image, created) VALUES ('$moviename', '$imgContent', '$dataTime')");
-       $insert = "INSERT INTO `BookTickz`.`image`(`name` , `image` , `created`) VALUES ('$moviename', '$imgContent', '$dataTime')";
-
-
+       $insert = $db->query("INSERT into BookTickz.image(name, image, created) VALUES ('$moviename', '$imgContent', '$dataTime')");
        if($insert){
            echo "File uploaded successfully.";
        }else{
            echo "File upload failed, please try again.";
-
+       }
+   }else{
+       echo "Please select an image file to upload.";
+   }
 }
 ?>
