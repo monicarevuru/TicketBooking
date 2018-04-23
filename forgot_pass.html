@@ -19,23 +19,14 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-         	<center> <h4 class="modal-title">  Sign - In </h4> <center>
+         	<center> <h4 class="modal-title"> Forgot Password </h4> <center>
         </div>
         <div class="modal-body">
 
 		<div>
-  			<form action="php/checklogin.php" name = "signin" method = "post">
-    				<label for="email">email</label>
-    				<input type="email" id="email" name="email" placeholder="Your EmailId.." required="required" data-error="Please enter this field.">
-
-    				<label for="password">Password</label>
-    				<input type="password" id="password" name="password" placeholder="Your Password.." required="required" data-error="Please enter your password.">
-
-				<br>
-				<a href=forgot_pass.html>Forgot Password? </a>
-				<br>
-			        <br>
-
+  			<form action="php/forgot.php">
+    				<label for="email">Email</label>
+    				<input type="email" id="email" name="email" required="required" data-error="Please enter this field.">
 
     				<input type="submit" value="Submit">
   			</form>
@@ -53,26 +44,6 @@
 </body>
 
 <style>
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-input[type=email], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
 input[type=submit] {
     width: 100%;
     background-color: #0e8ce4;
@@ -84,7 +55,7 @@ input[type=submit] {
     cursor: pointer;
 }
 
-input[type=password], select {
+input[type=email], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
