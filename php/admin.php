@@ -11,7 +11,7 @@ $result = mysqli_query($conn, $sql);
 //$row = mysql_fetch_assoc($result);
 //echo $row;
 if ( mysqli_num_rows( $result ) > 0 ) {
-  header("Location:/monicarevuru-TicketBooking/addmovie.html");
+  header("Location:/TicketBooking/addmovie.html");
 //  header("Location:addmovie.html");
 }
 else{
