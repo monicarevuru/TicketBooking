@@ -17,11 +17,13 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	} else {
 		//echo "email and password didn't match";
 		//echo json_encode(array("success"=> "false"));
-    $message = "Username and/or Password incorrect";
-  echo "<script type='text/javascript'>alert('$message');</script>";
+    $message = "EmailId/Password incorrect";
   //echo "hi";
-  //header("Location:/monicarevuru-TicketBooking/signin.html");
+    //header("Location:/TicketBooking/signin.html");
 
+
+    echo "<script type='text/javascript'>alert('$message');</script>";
+    //echo "<script type="text/javascript">alert("$message");Location"/TicketBooking/signin.html";</script>";
 
 	}
 }
