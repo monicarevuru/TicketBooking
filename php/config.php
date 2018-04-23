@@ -1,7 +1,7 @@
 <?php
 $mysqlhost = 'localhost';
 $mysqlusername = 'root';
-$mysqlpassword = 'amma1234';
+$mysqlpassword = '123456';
 $mysqldb = 'BookTickz';
 $conn = mysqli_connect($mysqlhost,$mysqlusername, $mysqlpassword, $mysqldb);
 ?>
