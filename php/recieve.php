@@ -29,7 +29,11 @@ else{
         }
         else {
 
-          echo "invalid";
+          //echo "EmailId already exists";
+          $message = "EmailId already exists";
+        //echo "hi";
+          echo "<script type='text/javascript'>alert('$message');</script>";
+          //header("Location:/TicketBooking/register.html");
         }
     }
     /*if ( mysql_select_db($mysqldb) ) {

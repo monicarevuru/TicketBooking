@@ -27,18 +27,18 @@
   			<form action="php/recieve.php">
 
 				<label for="name">Your Name</label>
-    				<input type="text" id="name" name="name">
+    				<input type="text" id="name" name="name" required="required" data-error="Please fill in this field.">
 
     				<label for="email">Your Email</label>
-    				<input type="email" id="email" name="email">
+    				<input type="email" id="email" name="email" required="required" data-error="Please fill in this field.">
 
 
 
 				<label for="password">Password</label>
-    				<input type="password" id="password" name="password">
+    				<input type="password" id="password" name="password" required="required" data-error="please fill in this field.">
 
 				<label for="cnfrmpass">Confirm Password</label>
-    				<input type="password" id="cnfrmpass" name="cnfrmpass">
+    				<input type="password" id="cnfrmpass" name="cnfrmpass" required="required" data-error="Please fill in this field.">
 
     				<input type="submit" value="Submit">
   			</form>
