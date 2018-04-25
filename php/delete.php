@@ -1,24 +1,24 @@
 <?php
 include("config.php");
         // Check connection
-                $dmovie = $_GET['moviename'];
-
+                $dmovie = $_POST['mname'];
        //Insert image content into database
-       mysql_select_db($mysqldb);
+       //mysqli_select_db($mysqldb);
+       $sqls = "SELECT * FROM `BookTickz`.`image` WHERE `name`= '$dmovie'";
+       $result = mysqli_query( $conn, $sqls);
+     	$row = mysqli_fetch_assoc($result);
+     	if( mysqli_num_rows( $result ) > 0) {
+        $sql = "DELETE FROM image WHERE name='$dmovie'";
 
-       //$insert = $conn->query("INSERT INTO BookTickz.image(name, image, created) VALUES ('$moviename', '$imgContent', '$dataTime')");
-       $delete = "DELETE FROM `BookTickz`.`image` WHERE `image`.`name` = '$dmovie'";
-       $result = mysql_query( $delete);
-
-       if($result){
-           echo "File deleted successfully.";
+        if (mysqli_query($conn, $sql)) {
+         echo "deleted!!";
        }
-       //if ( mysql_num_rows( $result ) > 0 ) {
-       //  header("Location:addmovie.html");
-       //echo "Deleted";
-       //}
-       else{
-           echo "File delete failed, please try again.";
-       }
+      else{
+        echo "File delete failed, please try again.";
+      }
+    }
+    else{
+      echo "Record not in database";
+    }
 
 ?>
