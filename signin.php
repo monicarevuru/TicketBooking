@@ -38,9 +38,9 @@ include("php/checklogin.php");
 						<div class="top_bar_content ml-auto">
 							<div class="top_bar_user">
 								<div class="user_icon"><img src="images/user.svg" alt=""></div>
-								<div><a href="register.html">Register</a></div>
-								<div><a href="signin.html"><?php echo $_SESSION['login_user']; ?></a></div>
-								<div><a href="admin.html">Admin</a></div>
+
+								<div><a href="update.html"><?php echo $_SESSION['login_user']; ?></a></div>
+								<div><a href="logout.php">Logout</a></div>
 							</div>
 						</div>
 					</div>
