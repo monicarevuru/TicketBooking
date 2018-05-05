@@ -63,25 +63,24 @@ include("php/checklogin.php");
 
 					<!-- Search -->
 					<div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
-						<div class="header_search">
-							<div class="header_search_content">
-								<div class="header_search_form_container">
-									<form action="#" class="header_search_form clearfix">
-										<input type="search" required="required" class="header_search_input" placeholder="Search ...">
-										<div class="custom_dropdown">
-											<div class="custom_dropdown_list">
-												<span class="custom_dropdown_placeholder clc">Language</span>
-												<i class="fas fa-chevron-down"></i>
+						<div class=>
+							<div class=>
+								<div class=>
+                  <form action=>
+										<div class=>
+											<div class=>
+												<span class="custom_dropdown_placeholder cl"></span>
+
 												<ul class="custom_list clc">
-													<li><a class="clc" href="#">All Languages</a></li>
-													<li><a class="clc" href="#">English</a></li>
-													<li><a class="clc" href="#">Hindi</a></li>
-													<li><a class="clc" href="#">Malayalam</a></li>
-													<li><a class="clc" href="#">Telugu</a></li>
+													<li><a class="clc" href="#"></a></li>
+													<li><a class="clc" href="#"></a></li>
+													<li><a class="clc" href="#"></a></li>
+													<li><a class="clc" href="#"></a></li>
+													<li><a class="clc" href="#"></a></li>
 												</ul>
 											</div>
 										</div>
-										<button type="submit" class="header_search_button trans_300" value="Submit"><img src="images/search.png" alt=""></button>
+										
 									</form>
 								</div>
 							</div>
@@ -104,10 +103,10 @@ include("php/checklogin.php");
 
 							<div class="main_nav_menu ml-auto">
 								<ul class="standard_dropdown main_nav_dropdown">
-									<li><a href="index.html">Home<i class="fas fa-chevron-down"></i></a></li>
-									<li><a href="movies.html">Movies<i class="fas fa-chevron-down"></i></a></li>
-									<li><a href="blog.html">About Us<i class="fas fa-chevron-down"></i></a></li>
-									<li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
+									<li><a href="index.html">Home<i class=""></i></a></li>
+									<li><a href="movies.html">Movies<i class=""></i></a></li>
+									<li><a href="blog.html">About Us<i class=""></i></a></li>
+									<li><a href="contact.html">Contact<i class=""></i></a></li>
 
 								</ul>
 							</div>
