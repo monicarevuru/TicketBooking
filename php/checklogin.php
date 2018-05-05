@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("config.php");
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   if ( !mysqli_select_db( $conn, $mysqldb) ) {
@@ -11,19 +12,18 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	$result = mysqli_query( $conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 	if( mysqli_num_rows( $result ) > 0) {
-
-		echo "login successful";
+     $_SESSION['login_user'] = $row["user_name"];
+     header("Location:/TicketBooking/signin.php");
+		//echo "login successful";
 		//echo json_encode(array("password"=> $row[`user_password`]));
 	} else {
 		//echo "email and password didn't match";
 		//echo json_encode(array("success"=> "false"));
-    $message = "EmailId/Password incorrect";
+    $message = "Username and/or Password incorrect";
+  echo "<script type='text/javascript'>alert('$message');</script>";
   //echo "hi";
-    //header("Location:/TicketBooking/signin.html");
+  //header("Location:/monicarevuru-TicketBooking/signin.html");
 
-
-    echo "<script type='text/javascript'>alert('$message');</script>";
-    //echo "<script type="text/javascript">alert("$message");Location"/TicketBooking/signin.html";</script>";
 
 	}
 }
