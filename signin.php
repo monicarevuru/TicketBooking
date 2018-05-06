@@ -40,7 +40,7 @@ include("php/checklogin.php");
 								<div class="user_icon"><img src="images/user.svg" alt=""></div>
 
 								<div><a href="update.html"><?php echo $_SESSION['login_user']; ?></a></div>
-								<div><a href="logout.php">Logout</a></div>
+								<div><a href="php/logout.php">Logout</a></div>
 							</div>
 						</div>
 					</div>

@@ -11,7 +11,7 @@ if(isset($_POST["submit"])){
         //DB details
         $dbHost     = 'localhost';
         $dbUsername = 'root';
-        $dbPassword = 'amma1234';
+        $dbPassword = '123456';
         $dbName     = 'BookTickz';
 
 

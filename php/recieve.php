@@ -32,14 +32,17 @@ else
       			//echo $sql;
         		if ( mysqli_query( $conn, $sql ) )
 			{
-          			echo "success";
+          			echo '<script type="text/javascript">';
+                		echo 'alert("Registered Successfully");';
+                		echo 'location.href="/TicketBooking/index.html"';
+                		echo '</script>';
         		}
         		else
-			         {
+			{
           			echo '<script type="text/javascript">';
-                echo 'alert("EmailId already exists");';
-                echo 'location.href="/TicketBooking/register.html"';
-                echo '</script>';
+                		echo 'alert("EmailId already exists");';
+                		echo 'location.href="/TicketBooking/register.html"';
+                		echo '</script>';
                 //echo 'window.location.href = "localhost/Ticketbooking/register.html";';
                 //header("location: localhost/TicketBooking/register.html");
 
