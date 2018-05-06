@@ -7,27 +7,28 @@ include("config.php");
        $sqls = "SELECT * FROM `BookTickz`.`image` WHERE `name`= '$dmovie'";
        $result = mysqli_query( $conn, $sqls);
      	$row = mysqli_fetch_assoc($result);
-     	if( mysqli_num_rows( $result ) > 0) {
-        $sql = "DELETE FROM image WHERE name='$dmovie'";
+     	if( mysqli_num_rows( $result ) > 0) 
+	{
+        	$sql = "DELETE FROM image WHERE name='$dmovie'";
 
-        if (mysqli_query($conn, $sql)) {
-		echo '<script type="text/javascript">';
-    		echo 'alert("deleted!");';
-    		echo 'location.href="/TicketBooking/delete.html"';
-    		echo '</script>';
-       }
-      else{
-		echo '<script type="text/javascript">';
-    		echo 'alert("File delete failed, please try again.");';
-    		echo 'location.href="/TicketBooking/delete.html"';
-    		echo '</script>';
-      }
-    }
-    else{
+        	if (mysqli_query($conn, $sql)) {
+			echo '<script type="text/javascript">';
+    			echo 'alert("deleted!");';
+    			echo 'location.href="/TicketBooking/delete.html"';
+    			echo '</script>';
+       		}
+      		else{
+			echo '<script type="text/javascript">';
+    			echo 'alert("File delete failed, please try again.");';
+    			echo 'location.href="/TicketBooking/delete.html"';
+    			echo '</script>';
+      		}
+    	}
+    	else{
 		echo '<script type="text/javascript">';
     		echo 'alert("Record not in database");';
     		echo 'location.href="/TicketBooking/delete.html"';
     		echo '</script>';
-    }
+    	}
 
 ?>

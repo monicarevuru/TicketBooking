@@ -26,7 +26,7 @@
 		<div>
   			<form action="php/admin.php">
     				<label for="email">Email</label>
-    				<input type="text" id="username" name="email" required="required" data-error="Please enter this field.">
+    				<input type="email" id="username" name="email" required="required" data-error="Please enter this field.">
 
     				<label for="password">Password</label>
     				<input type="password" id="password" name="password" required="required" data-error="Please enter this field.">
@@ -51,6 +51,16 @@
 
 <style>
 input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=email], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
