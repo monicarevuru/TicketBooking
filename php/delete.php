@@ -11,14 +11,23 @@ include("config.php");
         $sql = "DELETE FROM image WHERE name='$dmovie'";
 
         if (mysqli_query($conn, $sql)) {
-         echo "deleted!!";
+		echo '<script type="text/javascript">';
+    		echo 'alert("deleted!");';
+    		echo 'location.href="/TicketBooking/delete.html"';
+    		echo '</script>';
        }
       else{
-        echo "File delete failed, please try again.";
+		echo '<script type="text/javascript">';
+    		echo 'alert("File delete failed, please try again.");';
+    		echo 'location.href="/TicketBooking/delete.html"';
+    		echo '</script>';
       }
     }
     else{
-      echo "Record not in database";
+		echo '<script type="text/javascript">';
+    		echo 'alert("Record not in database");';
+    		echo 'location.href="/TicketBooking/delete.html"';
+    		echo '</script>';
     }
 
 ?>

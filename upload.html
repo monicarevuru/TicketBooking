@@ -8,35 +8,35 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 
 <div class="container">
-  <!-- Trigger the modal with a button -->
- <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> id="myModal"-->
-  <!-- Modal -->
-  <!--<div class="modal fade" role="dialog">-->
-    <div class="modal-dialog">
+     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header">
-         	<center> <h4 class="modal-title">  Admin </h4> <center>
-        </div>
-        <div class="modal-body">
+        	<div class="modal-header">
+        	 	<center> <h4 class="modal-title">  Admin </h4> <center>
+        	</div>
+        	<div class="modal-body">
 
-    <form action="php/upload.php" method="post" enctype="multipart/form-data">
-      <label for="mname">Movie Name</label>
-          <input type="text" id="mname" name="mname" required="required" data-error="Movie Name is required.">
+    			<form action="php/upload.php" method="post" enctype="multipart/form-data">
+      			<label for="mname">Movie Name</label>
+        	  	<input type="text" id="mname" name="mname" required="required" data-error="Movie Name is required.">
+	
+	
+      			<label for="image">Insert Image</label>
+        		<input type="file" id="image" name="image" required="required" data-error="Please select an image to upload">
+	
 
-
-      <label for="image">Insert Image</label>
-        <input type="file" id="image" name="image" required="required" data-error="Please select an image to upload">
-
-
-        <input type="submit" name="submit" value="UPLOAD"/>
-    </form>
-</div>
-</div>
-</div>
+        		<input type="submit" name="submit" value="UPLOAD"/>
+    			</form>
+		</div>
+		<div class="modal-footer">
+        	  <a href="addmovie.html">Close</a>
+        	</div>
+       </div>
+      </div>
 </div>
 
 </body>
