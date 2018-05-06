@@ -18,23 +18,31 @@ else
 {
 	if(strcmp($password,$cnfrm)!=0)
   	{
-    		echo "Passwords didn't match";
+      echo '<script type="text/javascript">';
+      echo 'alert("Passwords did not match");';
+      echo 'location.href="/TicketBooking/register.html"';
+      echo '</script>';
+    	
   	}
   	else
 	{
-    		if ( $conn ) 
+    		if ( $conn )
     		{
       			$sql = "INSERT INTO `BookTickz`.`user`(`user_name`, `user_email` , `user_password`) VALUES ('$name','$email','$password')";
       			//echo $sql;
-        		if ( mysqli_query( $conn, $sql ) ) 
+        		if ( mysqli_query( $conn, $sql ) )
 			{
           			echo "success";
         		}
-        		else 
-			{
-		          	$message = "EmailId already exists";
-          			echo "<script type='text/javascript'>alert('$message');</script>";
-          			//header("Location:/TicketBooking/register.html");
+        		else
+			         {
+          			echo '<script type="text/javascript">';
+                echo 'alert("EmailId already exists");';
+                echo 'location.href="/TicketBooking/register.html"';
+                echo '</script>';
+                //echo 'window.location.href = "localhost/Ticketbooking/register.html";';
+                //header("location: localhost/TicketBooking/register.html");
+
         		}
     		}
   	}

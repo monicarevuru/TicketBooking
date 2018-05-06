@@ -15,6 +15,9 @@ if ( mysqli_num_rows( $result ) > 0 ) {
 //  header("Location:addmovie.html");
 }
 else{
-  echo "Invalid admin login";
+  echo '<script type="text/javascript">';
+  echo 'alert("Invalid Credentials");';
+  echo 'location.href="/TicketBooking/admin.html"';
+  echo '</script>';
 }
 ?>
