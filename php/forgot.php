@@ -29,12 +29,17 @@ if ( $conn ) {
     		$mail->Password = 'amma12345678';
     		if(!$mail->send())
 		{
-			echo 'Email is not sent.';
-			echo 'Email error: ' . $mail->ErrorInfo;
+			echo '<script type="text/javascript">';
+    			echo 'alert("Email is not sent.Email error: '. $mail->ErrorInfo .' ");';
+    			echo 'location.href="/TicketBooking/signin.html"';
+    			echo '</script>';
     		}
 		else
 		{
-		  	echo 'Check Your Email for the Password ';
+			echo '<script type="text/javascript">';
+    			echo 'alert("Check Your Email for the Password");';
+    			echo 'location.href="/TicketBooking/signin.html"';
+    			echo '</script>';
 		}
 
   	}
