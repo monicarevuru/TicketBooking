@@ -15,6 +15,12 @@
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<?php
+include(config.php);
+$result = mysqli_query($conn,"SELECT * FROM image");
+?>
+
+
 
 </head>
 
@@ -166,99 +172,53 @@
 			<div class="row">
 				<div class="col">
 					<div class="blog_posts d-flex flex-row align-items-start justify-content-between">
+						<center
 
 
-						<!-- Blog post -->
-						<div class="blog_post">
-							<img src="images/ranga.jpg" alt="Avatar" class="image">
-							<div class="blog_button"><a href="#">Book Now</a></div>
-						</div>
-
-						<!-- Blog post -->
-						<div class="blog_post">
-							<img src="images/AIW.jpg" alt="Avatar" class="image">
-							<div class="blog_button"><a href="#">Book Now</a></div>
-						</div>
 
 
-						<!-- Blog post -->
-						<div class="blog_post">
-							<img src="images/octo.jpg" alt="Avatar" class="image">
-							<div class="blog_button"><a href="#">Book Now</a></div>
-						</div>
+						<?php
+$conn=mysqli_connect("localhost","root","123456","BookTickz");
+// Check connection
+if (mysqli_connect_errno())
+{
+echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
+$result = mysqli_query($conn,"SELECT * FROM image");
 
 
-						<!-- Blog post -->
-						<div class="blog_post">
-							<img src="images/cmr.jpg" alt="Avatar" class="image">
-							<div class="blog_button"><a href="#">Book Now</a></div>
-						</div>
+echo "<table border='1' table style= margin:0px' auto width='200' align='center'>
+<tr>
 
-						<!-- Blog post -->
-						<div class="blog_post">
-							<img src="images/ban.jpg" alt="Avatar" class="image">
-							<div class="blog_button"><a href="#">Book Now</a></div>
-						</div>
+</tr>";
+echo '<form action="venuetime.html">';
+while($row = mysqli_fetch_array($result))
+{
+echo "<tr>";
+//  echo "<td><img src='/var/www/html/".$row['image']."'></td>";
+//echo '<td><img src="'.$row['image'].'.jpg"></td>';
+ $row['name'];
 
-						<!-- Blog post -->
-						<div class="blog_post">
-							<img src="images/mohanlal.jpg" alt="Avatar" class="image">
-							<div class="blog_button"><a href="#">Book Now</a></div>
-						</div>
+echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'" alt="HTML5 Icon" style="width:200px;height:200px;padding:20px"/></td>';
+echo "</tr>";
+//echo ' <input type="submit" value="Submit">'
+echo "<tr>";
+//echo '<a href="/TicketBooking/venuetime.html">BookNow</a>'
+echo'<td><INPUT TYPE="submit" ID="C1" Value="BookNow" onclick="window.location.href=/TicketBooking/venuetime.html"><td>';
 
-						<!-- Blog post -->
-						<div class="blog_post">
-							<img src="images/ky.jpg" alt="Avatar" class="image">
-							<div class="blog_button"><a href="#">Book Now</a></div>
-						</div>
 
-						<!-- Blog post -->
-						<div class="blog_post">
-							<img src="images/ks.jpg" alt="Avatar" class="image">
-							<div class="blog_button"><a href="#">Book Now</a></div>
-						</div>
+echo "</tr>";
 
-						<!-- Blog post -->
-						<div class="blog_post">
-							<img src="images/pari.jpg" alt="Avatar" class="image">
-							<div class="blog_button"><a href="#">Book Now</a></div>
-						</div>
 
-						<!-- Blog post -->
-						<div class="blog_post">
-							<img src="images/SP.jpg" alt="Avatar" class="image">
-							<div class="blog_button"><a href="#">Book Now</a></div>
-						</div>
 
-						<!-- Blog post -->
-						<div class="blog_post">
-							<img src="images/bhaagi2.jpg" alt="Avatar" class="image">
-							<div class="blog_button"><a href="#">Book Now</a></div>
-						</div>
+}
+echo "</table>";
 
-						<!-- Blog post -->
-						<div class="blog_post">
-							<img src="images/marrowbone.jpg" alt="Avatar" class="image">
-							<div class="blog_button"><a href="#">Book Now</a></div>
-						</div>
 
-						<!-- Blog post -->
-						<div class="blog_post">
-							<img src="images/truthordare.jpeg" alt="Avatar" class="image">
-							<div class="blog_button"><a href="#">Book Now</a></div>
-						</div>
-
-						<!-- Blog post -->
-						<div class="blog_post">
-							<img src="images/padm.jpg" alt="Avatar" class="image">
-							<div class="blog_button"><a href="#">Book Now</a></div>
-						</div>
-
-						<!-- Blog post -->
-						<div class="blog_post">
-							<img src="images/rmpg.jpg" alt="Avatar" class="image">
-							<div class="blog_button"><a href="#">Book Now</a></div>
-						</div>
+mysqli_close($conn);
+?>
+</center>
 
 					</div>
 				</div>
