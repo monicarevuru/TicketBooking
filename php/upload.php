@@ -27,9 +27,9 @@ if(isset($_POST["submit"])){
        $insert = $db->query("INSERT into BookTickz.image(name, image, created) VALUES ('$moviename', '$imgContent', '$dataTime')");
        if($insert){
 	   	echo '<script type="text/javascript">';
-    		echo 'alert("File uploaded successfully, Proceed with venue details.");';
+    		echo 'alert("File uploaded successfully.");';
     		echo 'location.href="/TicketBooking/upload.html"';
-    		echo '</script>';
+    		echo '</script>';	
        }else{
 		echo '<script type="text/javascript">';
     		echo 'alert("File upload failed, please try again.");';
