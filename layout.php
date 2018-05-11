@@ -50,8 +50,9 @@ $display = (mysql_num_rows($result) == 1);
 
 $disable = $display?'':'disabled="disabled"';
 
-   echo'<input name="ch1" type="checkbox" id="A1" value="" />;
-          <input type="checkbox" <var>disable</var> id="1D" />
+   echo '<input name="ch1" type="checkbox" id="A1" value="" />';
+        echo ' <input type="checkbox" <var>disable</var> id="1D" />';
+        ?>
           <label for="1D">Occupied</label>
         </li>
         <li class="seat">
