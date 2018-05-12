@@ -46,14 +46,14 @@
 
           $query = "SELECT * FROM seats WHERE Seat_Status = 1";
 $result = mysqli_query($conn,$query);
-$display = (mysql_num_rows($result) == 1);
-
+$display = (mysql_num_rows($result[0]) == 1);
+//echo $display;
 $disable = $display?'':'disabled="disabled"';
 
-   echo '<input name="ch1" type="checkbox" id="A1" value="" />';
-        echo ' <input type="checkbox" <var>disable</var> id="1D" />';
+   echo '<input name="ch1" type="checkbox" id="A1" value="" $disable/>';
+        //echo ' <input type="checkbox" <var>disable</var> id="1D" />';
         ?>
-          <label for="1D">Occupied</label>
+          <label for="1D">X</label>
         </li>
         <li class="seat">
           <input type="checkbox" id="1E" />
@@ -323,7 +323,7 @@ $disable = $display?'':'disabled="disabled"';
   </div>
 </div>
 <div>
-    <form action="layout.html" name = "layout" method = "post">
+    <form action="php/ConfirmPassword.php" name = "layout" method = "post">
     <br>
           <br>
 

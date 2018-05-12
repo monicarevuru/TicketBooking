@@ -19,7 +19,7 @@
 
   <div class="plane">
   <div class="cockpit">
-    <h1>Please select a seat</h1>
+    <h1>Please select seats</h1>
   </div>
   <div class="exit exit--front fuselage">
 
@@ -40,6 +40,14 @@
           <label for="1C">1C</label>
         </li>
         <li class="seat">
+          <?php
+          $query = "SELECT * FROM seats WHERE SeatStatus = 1";
+$result = @mysql_query($query);
+$display = (mysql_num_rows($result) == 1);
+
+$disable = $display?'':'disabled="disabled"';?>
+
+   <input name="ch1" type="checkbox" id="A1" value="" <?php echo $disable; ?>/>;
           <input type="checkbox" disabled id="1D" />
           <label for="1D">Occupied</label>
         </li>
