@@ -17,6 +17,7 @@
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 <?php
 include(config.php);
+session_start();
 $result = mysqli_query($conn,"SELECT * FROM image");
 ?>
 
@@ -48,8 +49,11 @@ $result = mysqli_query($conn,"SELECT * FROM image");
 								</div>
 								<div class="top_bar_user">
 									<div class="user_icon"><img src="images/user.svg" alt=""></div>
-									<div><a href="register.html">Register</a></div>
-									<div><a href="signin.html">Sign in</a></div>
+									<?php
+									session_start();
+									if( isset($_SESSION["myusername"]) ){?>
+											echo '<div><a href="register.html">Register</a></div>';
+											echo '<div><a href="signin.html">Sign in</a></div>';
 								</div>
 							</div>
 						</div>
