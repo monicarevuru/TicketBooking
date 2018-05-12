@@ -1,5 +1,5 @@
 <?php
-include("php/checklogin.php");
+session_start();
 
 ?>
 <!DOCTYPE html>
@@ -80,7 +80,7 @@ include("php/checklogin.php");
 												</ul>
 											</div>
 										</div>
-										
+
 									</form>
 								</div>
 							</div>
@@ -104,7 +104,7 @@ include("php/checklogin.php");
 							<div class="main_nav_menu ml-auto">
 								<ul class="standard_dropdown main_nav_dropdown">
 									<li><a href="index.html">Home<i class=""></i></a></li>
-									<li><a href="movies.html">Movies<i class=""></i></a></li>
+									<li><a href="movies.php">Movies<i class=""></i></a></li>
 									<li><a href="blog.html">About Us<i class=""></i></a></li>
 									<li><a href="contact.html">Contact<i class=""></i></a></li>
 
