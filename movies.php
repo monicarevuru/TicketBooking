@@ -12,16 +12,6 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/movies.css">
-<link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
-<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="styles/responsive.css">
-<?php
-include(config.php);
-session_start();
-$result = mysqli_query($conn,"SELECT * FROM image");
-?>
-
-
 
 </head>
 
@@ -49,11 +39,8 @@ $result = mysqli_query($conn,"SELECT * FROM image");
 								</div>
 								<div class="top_bar_user">
 									<div class="user_icon"><img src="images/user.svg" alt=""></div>
-									<?php
-									session_start();
-									if( isset($_SESSION["myusername"]) ){?>
-											echo '<div><a href="register.html">Register</a></div>';
-											echo '<div><a href="signin.html">Sign in</a></div>';
+									<div><a href="register.html">Register</a></div>
+									<div><a href="signin.html">Sign in</a></div>
 								</div>
 							</div>
 						</div>
@@ -178,51 +165,35 @@ $result = mysqli_query($conn,"SELECT * FROM image");
 					<div class="blog_posts d-flex flex-row align-items-start justify-content-between">
 						<center
 
+							<?php
+							$conn=mysqli_connect("localhost","root","123456","BookTickz");
+							// Check connection
+							if (mysqli_connect_errno())
+							{
+							echo "Failed to connect to MySQL: " . mysqli_connect_error();
+							}
+
+							$result = mysqli_query($conn,"SELECT * FROM image");
 
 
+							echo "<table border='1' table style= margin:0px' auto width='200' align='center'><tr></tr>";
+							echo '<form action="venuetime.html">';
+							while($row = mysqli_fetch_array($result))
+							{
+								echo "<tr>";
+								echo "<td>";
+								echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'" alt="HTML5 Icon" style="width:300px;height:300px;padding:20px" class="blog_button"/>';
+								echo '<td><a href="#">Book Now</a></td>';
+								echo "</td>";
+								echo "</tr>";
 
-						<?php
-$conn=mysqli_connect("localhost","root","123456","BookTickz");
-// Check connection
-if (mysqli_connect_errno())
-{
-echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-
-$result = mysqli_query($conn,"SELECT * FROM image");
-
-
-echo "<table border='1' table style= margin:0px' auto width='200' align='center'>
-<tr>
-
-</tr>";
-echo '<form action="venuetime.html">';
-while($row = mysqli_fetch_array($result))
-{
-echo "<tr>";
-//  echo "<td><img src='/var/www/html/".$row['image']."'></td>";
-//echo '<td><img src="'.$row['image'].'.jpg"></td>';
- $row['name'];
-
-echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'" alt="HTML5 Icon" style="width:200px;height:200px;padding:20px"/></td>';
-echo "</tr>";
-//echo ' <input type="submit" value="Submit">'
-echo "<tr>";
-//echo '<a href="/TicketBooking/venuetime.html">BookNow</a>'
-echo'<td><INPUT TYPE="submit" ID="C1" Value="BookNow" onclick="window.location.href=/TicketBooking/venuetime.html"><td>';
-
-
-echo "</tr>";
-
-
-
-}
-echo "</table>";
-
-
-mysqli_close($conn);
-?>
-</center>
+//echo "<tr>";
+//echo'<td><INPUT TYPE="submit" ID="C1" Value="BookNow" onclick="window.location.href=/TicketBooking/venuetime.html"><td>';
+							}
+							echo "</table>";
+							mysqli_close($conn);
+							?> 
+					 	</center>
 
 					</div>
 				</div>
@@ -240,6 +211,8 @@ mysqli_close($conn);
 	<footer class="footer">
 		<div class="container">
 			<div class="row">
+			<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/shop_background.jpg"></div>
+			<div class="home_overlay"></div>
 
 				<div class="col-lg-3 footer_col">
 					<div class="footer_column footer_contact">
@@ -282,43 +255,9 @@ mysqli_close($conn);
 			</div>
 		</div>
 	</footer>
-
-	<!-- Copyright -->
-
-	<div class="copyright">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-
-					<div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
-
-						<div class="logos ml-sm-auto">
-							<ul class="logos_list">
-								<li><a href="#"><img src="images/logos_1.png" alt=""></a></li>
-								<li><a href="#"><img src="images/logos_2.png" alt=""></a></li>
-								<li><a href="#"><img src="images/logos_3.png" alt=""></a></li>
-								<li><a href="#"><img src="images/logos_4.png" alt=""></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 </div>
 
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="styles/bootstrap4/popper.js"></script>
-<script src="styles/bootstrap4/bootstrap.min.js"></script>
-<script src="plugins/greensock/TweenMax.min.js"></script>
-<script src="plugins/greensock/TimelineMax.min.js"></script>
-<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
-<script src="plugins/greensock/animation.gsap.min.js"></script>
-<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="plugins/parallax-js-master/parallax.min.js"></script>
-<script src="plugins/easing/easing.js"></script>
-<script src="js/blog_custom.js"></script>
+
 </body>
 
 </html>
