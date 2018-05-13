@@ -41,10 +41,10 @@
         </li>
         <li class="seat">
           <?php
-            include include("config.php");
+            include("php/config.php");
             mysqli_select_db( $conn, $mysqldb);
 
-          $query = "SELECT * FROM seats WHERE Seat_Status = 1";
+          $query = "SELECT * FROM seat_layout WHERE Seat_Status = 1";
 $result = mysqli_query($conn,$query);
 $display = (mysql_num_rows($result[0]) == 1);
 //echo $display;
