@@ -23,21 +23,35 @@
     			<form action="php/upload.php" method="post" enctype="multipart/form-data">
       			<label for="mname">Movie Name</label>
         	  	<input type="text" id="mname" name="mname" required="required" data-error="Movie Name is required.">
-	
-	
+
+
       			<label for="image">Insert Image</label>
         		<input type="file" id="image" name="image" required="required" data-error="Please select an image to upload">
-	
 
-        		<input type="submit" name="submit" value="UPLOAD"/>
+            <label for="desc">Description</label>
+        	  	<input type="text" id="desc" name="desc" required="required" data-error="Movie Name is required.">
+<br>
+              <label for="timing">Timing</label>
+<br>
+
+              <input type="checkbox" name="timeslot[]" value="timeslot1"><label> 11:00 - 13:45</label><br>
+  <input type="checkbox" name="timeslot[]" value="timeslot2" ><label> 15:00 - 17:30</label><br>
+  <input type="checkbox" name="timeslot[]" value="timeslot3"><label> 18:00 - 20:30</label><br>
+  <input type="checkbox" name="timeslot[]" value="timeslot4"> <label>21:00 - 00:00</label><br>
+
+
+
+        		<center><input type="submit" name="upload" value="UPLOAD"/></center>
+
+
     			</form>
-		</div>
-		<div class="modal-footer">
-        	  <a href="addmovie.html">Close</a>
-        	</div>
-       </div>
-      </div>
-</div>
+        </div>
+        <div class="modal-footer">
+          <a href="addmovie.html">Close</a>
+        </div>
+          <br>
+          <br>
+
 
 </body>
 
@@ -54,7 +68,7 @@ input[type=text], select {
 }
 
 input[type=submit] {
-    width: 100%;
+    width: 50%;
     background-color: #0e8ce4;
     color: white;
     padding: 14px 20px;
@@ -83,5 +97,6 @@ div {
     background-color: #f2f2f2;
     padding: 20px;
 }
+
 </style>
 </html>
