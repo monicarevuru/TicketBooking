@@ -323,7 +323,7 @@ $disable = $display?'':'disabled="disabled"';
   </div>
 </div>
 <div>
-    <form action="php/ConfirmPassword.php" name = "layout" method = "post">
+    <form action="ConfirmPassword.html" name = "layout" method = "post">
     <br>
           <br>
 
