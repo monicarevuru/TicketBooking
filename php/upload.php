@@ -1,34 +1,21 @@
 <?php
 $moviename=$_POST['mname'];
 $description=$_POST['desc'];
-
 //if(isset($_POST['upload'])){
     $check = getimagesize($_FILES["image"]["tmp_name"]);
     if($check !== false){
         $image = $_FILES['image']['tmp_name'];
         $imgContent = addslashes(file_get_contents($image));
-
-
         //DB details
         $dbHost     = 'localhost';
         $dbUsername = 'root';
         $dbPassword = '123456';
         $dbName     = 'BookTickz';
-
-
             $db = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
-
         // Check connection
        if($db->connect_error){
             die("Connection failed: " . $db->connect_error);
-
         }
-
-
-
-
-
-
                 $dataTime = date("Y-m-d H:i:s");
                 // $checkbox1 = $_POST['timeslot'];
                 // $checkbox2 = $_POST['timeslot2'];
@@ -36,29 +23,269 @@ $description=$_POST['desc'];
                 // $checkbox4 = $_POST['timeslot4'];
                  $timeslot = $_POST['timeslot'];
                  if(!empty($_POST['timeslot'])) {
-
+		    if($timeslot[0]=='timeslot1'){
                     $insert = mysqli_query($db,"INSERT into `BookTickz`.`image`(`name`, `image`, `created`, `Description`, `Timeslot`) VALUES ('$moviename', '$imgContent', '$dataTime', '$description', '".$timeslot[0]."')");
-                    if($timeslot[1]=='timeslot2')
+		     $insert1A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '1A', 0 )");
+		     $insert1B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '1B', 0 )");
+		     $insert1C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '1C', 0 )");
+		     $insert1D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '1D', 0 )");
+		     $insert1E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '1E', 0 )");
+         $insert1F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '1F', 0 )");
+		     $insert2A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '2A', 0 )");
+		     $insert2B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '2B', 0 )");
+		     $insert2C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '2C', 0 )");
+		     $insert2D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '2D', 0 )");
+		     $insert2E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '2E', 0 )");
+         $insert2F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '2F', 0 )");
+         $insert3A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '3A', 0 )");
+         $insert3B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '3B', 0 )");
+         $insert3C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '3C', 0 )");
+         $insert3D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '3D', 0 )");
+         $insert3E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '3E', 0 )");
+         $insert3F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '3F', 0 )");
+         $insert4A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '4A', 0 )");
+         $insert4B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '4B', 0 )");
+         $insert4C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '4C', 0 )");
+         $insert4D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '4D', 0 )");
+         $insert4E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '4E', 0 )");
+         $insert4F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '4F', 0 )");
+         $insert5A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '5A', 0 )");
+         $insert5B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '5B', 0 )");
+         $insert5C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '5C', 0 )");
+         $insert5D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '5D', 0 )");
+         $insert5E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '5E', 0 )");
+         $insert5F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '5F', 0 )");
+         $insert6A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '6A', 0 )");
+         $insert6B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '6B', 0 )");
+         $insert6C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '6C', 0 )");
+         $insert6D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '6D', 0 )");
+         $insert6E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '6E', 0 )");
+         $insert6F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '6F', 0 )");
+         $insert7A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '7A', 0 )");
+         $insert7B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '7B', 0 )");
+         $insert7C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '7C', 0 )");
+         $insert7D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '7D', 0 )");
+         $insert7E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '7E', 0 )");
+         $insert7F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '7F', 0 )");
+         $insert8A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '8A', 0 )");
+         $insert8B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '8B', 0 )");
+         $insert8C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '8C', 0 )");
+         $insert8D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '8D', 0 )");
+         $insert8E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '8E', 0 )");
+         $insert8F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '8F', 0 )");
+         $insert9A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '9A', 0 )");
+         $insert9B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '9B', 0 )");
+         $insert9C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '9C', 0 )");
+         $insert9D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '9D', 0 )");
+         $insert9E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '9E', 0 )");
+         $insert9F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '9F', 0 )");
+         $insert10A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '10A', 0 )");
+         $insert10B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '10B', 0 )");
+         $insert10C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '10C', 0 )");
+         $insert10D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '10D', 0 )");
+         $insert10E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '10E', 0 )");
+         $insert10F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[0]."', '10F', 0 )");
+		    }
+                    if($timeslot[1]=='timeslot2'){
                     $insert2 = mysqli_query($db,"INSERT into `BookTickz`.`image`(`name`, `image`, `created`, `Description`, `Timeslot`) VALUES ('$moviename', '$imgContent', '$dataTime', '$description', '".$timeslot[1]."')");
+                    $insert21A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '1A', 0 )");
+                    $insert21B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '1B', 0 )");
+                    $insert21C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '1C', 0 )");
+                    $insert21D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '1D', 0 )");
+                    $insert21E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '1E', 0 )");
+                    $insert21F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '1F', 0 )");
+                    $insert22A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '2A', 0 )");
+                    $insert22B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '2B', 0 )");
+                    $insert22C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '2C', 0 )");
+                    $insert22D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '2D', 0 )");
+                    $insert22E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '2E', 0 )");
+                    $insert22F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '2F', 0 )");
+                    $insert23A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '3A', 0 )");
+                    $insert23B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '3B', 0 )");
+                    $insert23C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '3C', 0 )");
+                    $insert23D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '3D', 0 )");
+                    $insert23E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '3E', 0 )");
+                    $insert23F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '3F', 0 )");
+                    $insert24A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '4A', 0 )");
+                    $insert24B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '4B', 0 )");
+                    $insert24C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '4C', 0 )");
+                    $insert24D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '4D', 0 )");
+                    $insert24E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '4E', 0 )");
+                    $insert24F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '4F', 0 )");
+                    $insert25A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '5A', 0 )");
+                    $insert25B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '5B', 0 )");
+                    $insert25C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '5C', 0 )");
+                    $insert25D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '5D', 0 )");
+                    $insert25E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '5E', 0 )");
+                    $insert25F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '5F', 0 )");
+                    $insert26A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '6A', 0 )");
+                    $insert26B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '6B', 0 )");
+                    $insert26C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '6C', 0 )");
+                    $insert26D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '6D', 0 )");
+                    $insert26E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '6E', 0 )");
+                    $insert26F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '6F', 0 )");
+                    $insert27A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '7A', 0 )");
+                    $insert27B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '7B', 0 )");
+                    $insert27C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '7C', 0 )");
+                    $insert27D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '7D', 0 )");
+                    $insert27E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '7E', 0 )");
+                    $insert27F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '7F', 0 )");
+                    $insert28A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '8A', 0 )");
+                    $insert28B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '8B', 0 )");
+                    $insert28C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '8C', 0 )");
+                    $insert28D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '8D', 0 )");
+                    $insert28E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '8E', 0 )");
+                    $insert28F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '8F', 0 )");
+                    $insert29A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '9A', 0 )");
+                    $insert29B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '9B', 0 )");
+                    $insert29C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '9C', 0 )");
+                    $insert29D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '9D', 0 )");
+                    $insert29E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '9E', 0 )");
+                    $insert29F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '9F', 0 )");
+                    $insert210A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '10A', 0 )");
+                    $insert210B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '10B', 0 )");
+                    $insert210C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '10C', 0 )");
+                    $insert210D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '10D', 0 )");
+                    $insert210E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '10E', 0 )");
+                    $insert210F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[1]."', '10F', 0 )");
+        }
                     //$insert3 = mysqli_query($db,"INSERT into `BookTickz`.`image`(`name`, `image`, `created`, `Description`, `Timeslot`) VALUES ('$moviename', '$imgContent', '$dataTime', '$description', '$checkbox3')");
-                    if($timeslot[2]=='timeslot3')
+                    if($timeslot[2]=='timeslot3'){
                     $insert3 = mysqli_query($db,"INSERT into `BookTickz`.`image`(`name`, `image`, `created`, `Description`, `Timeslot`) VALUES ('$moviename', '$imgContent', '$dataTime', '$description', '".$timeslot[2]."')");
-                    if($timeslot[3]=='timeslot4')
+                    $insert31A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '1A', 0 )");
+                    $insert31B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '1B', 0 )");
+                    $insert31C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '1C', 0 )");
+                    $insert31D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '1D', 0 )");
+                    $insert31E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '1E', 0 )");
+                    $insert31F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '1F', 0 )");
+                    $insert32A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '2A', 0 )");
+                    $insert32B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '2B', 0 )");
+                    $insert32C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '2C', 0 )");
+                    $insert32D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '2D', 0 )");
+                    $insert32E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '2E', 0 )");
+                    $insert32F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '2F', 0 )");
+                    $insert33A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '3A', 0 )");
+                    $insert33B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '3B', 0 )");
+                    $insert33C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '3C', 0 )");
+                    $insert33D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '3D', 0 )");
+                    $insert33E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '3E', 0 )");
+                    $insert33F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '3F', 0 )");
+                    $insert34A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '4A', 0 )");
+                    $insert34B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '4B', 0 )");
+                    $insert34C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '4C', 0 )");
+                    $insert34D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '4D', 0 )");
+                    $insert34E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '4E', 0 )");
+                    $insert34F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '4F', 0 )");
+                    $insert35A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '5A', 0 )");
+                    $insert35B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '5B', 0 )");
+                    $insert35C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '5C', 0 )");
+                    $insert35D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '5D', 0 )");
+                    $insert35E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '5E', 0 )");
+                    $insert35F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '5F', 0 )");
+                    $insert36A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '6A', 0 )");
+                    $insert36B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '6B', 0 )");
+                    $insert36C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '6C', 0 )");
+                    $insert36D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '6D', 0 )");
+                    $insert36E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '6E', 0 )");
+                    $insert36F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '6F', 0 )");
+                    $insert37A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '7A', 0 )");
+                    $insert37B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '7B', 0 )");
+                    $insert37C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '7C', 0 )");
+                    $insert37D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '7D', 0 )");
+                    $insert37E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '7E', 0 )");
+                    $insert37F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '7F', 0 )");
+                    $insert38A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '8A', 0 )");
+                    $insert38B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '8B', 0 )");
+                    $insert38C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '8C', 0 )");
+                    $insert38D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '8D', 0 )");
+                    $insert38E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '8E', 0 )");
+                    $insert38F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '8F', 0 )");
+                    $insert39A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '9A', 0 )");
+                    $insert39B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '9B', 0 )");
+                    $insert39C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '9C', 0 )");
+                    $insert39D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '9D', 0 )");
+                    $insert39E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '9E', 0 )");
+                    $insert39F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '9F', 0 )");
+                    $insert310A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '10A', 0 )");
+                    $insert310B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '10B', 0 )");
+                    $insert310C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '10C', 0 )");
+                    $insert310D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '10D', 0 )");
+                    $insert310E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '10E', 0 )");
+                    $insert310F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[2]."', '10F', 0 )");
+        }
+                    if($timeslot[3]=='timeslot4'){
                     $insert4 = mysqli_query($db,"INSERT into `BookTickz`.`image`(`name`, `image`, `created`, `Description`, `Timeslot`) VALUES ('$moviename', '$imgContent', '$dataTime', '$description', '".$timeslot[3]."')");
+                    $insert41A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '1A', 0 )");
+                    $insert41B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '1B', 0 )");
+                    $insert41C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '1C', 0 )");
+                    $insert41D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '1D', 0 )");
+                    $insert41E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '1E', 0 )");
+                    $insert41F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '1F', 0 )");
+                    $insert42A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '2A', 0 )");
+                    $insert42B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '2B', 0 )");
+                    $insert42C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '2C', 0 )");
+                    $insert42D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '2D', 0 )");
+                    $insert42E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '2E', 0 )");
+                    $insert42F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '2F', 0 )");
+                    $insert43A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '3A', 0 )");
+                    $insert43B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '3B', 0 )");
+                    $insert43C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '3C', 0 )");
+                    $insert43D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '3D', 0 )");
+                    $insert43E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '3E', 0 )");
+                    $insert43F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '3F', 0 )");
+                    $insert44A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '4A', 0 )");
+                    $insert44B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '4B', 0 )");
+                    $insert44C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '4C', 0 )");
+                    $insert44D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '4D', 0 )");
+                    $insert44E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '4E', 0 )");
+                    $insert44F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '4F', 0 )");
+                    $insert45A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '5A', 0 )");
+                    $insert45B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '5B', 0 )");
+                    $insert45C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '5C', 0 )");
+                    $insert45D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '5D', 0 )");
+                    $insert45E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '5E', 0 )");
+                    $insert45F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '5F', 0 )");
+                    $insert46A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '6A', 0 )");
+                    $insert46B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '6B', 0 )");
+                    $insert46C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '6C', 0 )");
+                    $insert46D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '6D', 0 )");
+                    $insert46E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '6E', 0 )");
+                    $insert46F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '6F', 0 )");
+                    $insert47A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '7A', 0 )");
+                    $insert47B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '7B', 0 )");
+                    $insert47C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '7C', 0 )");
+                    $insert47D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '7D', 0 )");
+                    $insert47E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '7E', 0 )");
+                    $insert47F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '7F', 0 )");
+                    $insert48A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '8A', 0 )");
+                    $insert48B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '8B', 0 )");
+                    $insert48C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '8C', 0 )");
+                    $insert48D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '8D', 0 )");
+                    $insert48E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '8E', 0 )");
+                    $insert48F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '8F', 0 )");
+                    $insert49A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '9A', 0 )");
+                    $insert49B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '9B', 0 )");
+                    $insert49C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '9C', 0 )");
+                    $insert49D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '9D', 0 )");
+                    $insert49E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '9E', 0 )");
+                    $insert49F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '9F', 0 )");
+                    $insert410A = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '10A', 0 )");
+                    $insert410B = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '10B', 0 )");
+                    $insert410C = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '10C', 0 )");
+                    $insert410D = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '10D', 0 )");
+                    $insert410E = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '10E', 0 )");
+                    $insert410F = mysqli_query($db,"INSERT into `BookTickz`.`seat_layout`(`name`, `Timeslot`, `seat_name`, `seat_status`) VALUES ('$moviename', '".$timeslot[3]."', '10F', 0 )");
+        }
 }
-
                 else{
                   echo '<script type="text/javascript">';
                     echo 'alert("Please select atleast one timeslot.");';
                     echo 'location.href="/TicketBooking/upload.html"';
                     echo '</script>';
                   }
-
                   //  $insert4 = mysqli_query($db,"INSERT into `BookTickz`.`image`(`name`, `image`, `created`, `Description`, `Timeslot`) VALUES ('$moviename', '$imgContent', '$dataTime', '$description', '$checkbox4')");
-
        //Insert image content into database
-
-       if($insert1 |$insert2 |$insert3 |$insert4 ){
+       if($insert |$insert2 |$insert3 |$insert4 ){
 	   	echo '<script type="text/javascript">';
     		echo 'alert("Movie uploaded successfully.");';
     		echo 'location.href="/TicketBooking/upload.html"';

@@ -181,7 +181,7 @@
 								echo '<div class="col">';
 								echo '<div class="blog_posts d-flex flex-row align-items-start justify-content-between">';
 								echo '<div class="blog_post">';
-								echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'" alt="HTML5 Icon" style="width:300px;height:300px;padding:20px"/><button class="blog_button">'.$row["name"].'</button>';
+								echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'" alt="HTML5 Icon" style="width:300px;height:300px;padding:20px"/><button class="blog_button" onclick = "myFunction()">'.$row["name"].'</button>';
 								echo '</div>';
 								echo '</div>';
 								echo '</div>';

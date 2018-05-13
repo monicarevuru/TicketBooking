@@ -10,8 +10,8 @@
 </head>
 <body>
 <?php
-include("config.php");
-echo $conn;
+include("php/config.php");
+//echo $conn;
 
 ?>
 <div class="container">
@@ -38,7 +38,7 @@ echo $conn;
 
             <?php
             include("php/config.php");
-            $sql = "SELECT * from image where name = 'Premam'";
+            $sql = "SELECT * from image where name = 'Bharath Ane Nenu'";
               //$result = mysqli_query($conn, $sql);
               //echo "<pre>Debug: $sql</pre>\m";
               $result = mysqli_query($conn, $sql);
@@ -60,7 +60,7 @@ echo $conn;
     				<label for="timeslot">SHOW TIME</label>
             <br>
             <?php
-            include("config.php");
+            include("php/config.php");
 
             $sqls = "SELECT `Timeslot` FROM `image` WHERE `name` = 'hello' ";
               //$result = mysqli_query($conn, $sql);
@@ -92,7 +92,7 @@ echo $conn;
                 }
             }
 
-            print "<br />";
+            echo '<br />';
             ++$rowcount;
 
         }
