@@ -159,11 +159,8 @@
 	<!-- Blog -->
 
 	<div class="blog">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="blog_posts d-flex flex-row align-items-start justify-content-between">
-						<center
+		<div class="cont">
+					<center>
 
 							<?php
 							$conn=mysqli_connect("localhost","root","123456","BookTickz");
@@ -173,32 +170,28 @@
 							echo "Failed to connect to MySQL: " . mysqli_connect_error();
 							}
 
-							$result = mysqli_query($conn,"SELECT * FROM image");
+							$result = mysqli_query($conn,"SELECT distinct name, image FROM image");
 
 
-							echo "<table border='1' table style= margin:0px' auto width='200' align='center'><tr></tr>";
-							echo '<form action="venuetime.html">';
+							//echo "<table border='1' table style= margin:0px' auto width='200' align='center'><tr></tr>";
+							echo '<form action="venuetime.php">';
 							while($row = mysqli_fetch_array($result))
 							{
-								echo "<tr>";
-								echo "<td>";
-								echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'" alt="HTML5 Icon" style="width:300px;height:300px;padding:20px" class="blog_button"/>';
-								echo '<td><a href="#">Book Now</a></td>';
-								echo "</td>";
-								echo "</tr>";
-
-//echo "<tr>";
-//echo'<td><INPUT TYPE="submit" ID="C1" Value="BookNow" onclick="window.location.href=/TicketBooking/venuetime.html"><td>';
+								echo '<div class="row">';
+								echo '<div class="col">';
+								echo '<div class="blog_posts d-flex flex-row align-items-start justify-content-between">';
+								echo '<div class="blog_post">';
+								echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'" alt="HTML5 Icon" style="width:300px;height:300px;padding:20px"/><button class="blog_button">'.$row["name"].'</button>';
+								echo '</div>';
+								echo '</div>';
+								echo '</div>';
+								echo '</div>';
 							}
-							echo "</table>";
+							//echo "</table>";
 							mysqli_close($conn);
-							?> 
-					 	</center>
+							?>
 
-					</div>
-				</div>
-
-			</div>
+					</center>
 		</div>
 	</div>
 
