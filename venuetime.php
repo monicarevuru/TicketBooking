@@ -9,11 +9,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<?php
-include("php/config.php");
-//echo $conn;
-
-?>
 <div class="container">
   <!-- Trigger the modal with a button -->
  <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> id="myModal"-->
@@ -28,75 +23,79 @@ include("php/config.php");
         <div class="modal-body">
 
 		<div>
-  			<form action="layout.html" name = "layout" method = "post">
-      				<label for="theatre">THEATRE - BookTickZ</label>
-            <br>
-            <br>
+  			<form action="layout.php" name = "layout" method = "post">
+      				<label for="theatre">THEATRE </label>
+				<p>Book TickZ </p><br>
+  				<label for="theatre">DESCRIPTION</label>
+  				<br>
+            			<?php
+            				include("php/config.php");
+					          session_start();
+           				$_SESSION['movie_name'] = $_GET['bookbtn'];
+           				$val = $_SESSION['movie_name'];
+            				$sql = "SELECT * from image where name = '$val' ";
+             	 			$result = mysqli_query($conn, $sql);
+              				if ( 'false'===$result ) {
+                  				printf("error: %s\n", mysqli_error($conn));
+                			}
+            				$row = mysqli_fetch_assoc($result);
 
-  <label for="theatre">DESCRIPTION</label>
-  <br>
+        				if( mysqli_num_rows( $result ) > 0)
+        				{
+            					echo $row['Description'];
 
-            <?php
-            include("php/config.php");
-            $sql = "SELECT * from image where name = 'Bharath Ane Nenu'";
-              //$result = mysqli_query($conn, $sql);
-              //echo "<pre>Debug: $sql</pre>\m";
-              $result = mysqli_query($conn, $sql);
-              if ( 'false'===$result ) {
-                  printf("error: %s\n", mysqli_error($conn));
-                }
-            $row = mysqli_fetch_assoc($result);
-
-          //  echo '<input type="desc" id="desc" name="desc" value = "$result" >;
-        if( mysqli_num_rows( $result ) > 0)
-        {
-            echo $row['Description'];
-
-          }
-          ?>
-          <br>
-             <br>
+          				}
+          			?>
+          			<br>
+             			<br>
 
     				<label for="timeslot">SHOW TIME</label>
-            <br>
-            <?php
-            include("php/config.php");
+            			<br>
+            			<?php
+            				include("php/config.php");
+					          session_start();
+           				  $_SESSION['movie_name'] = $_GET['bookbtn'];
+           				  $var = $_SESSION['movie_name'];
+            				$sqls = "SELECT `Timeslot` FROM `image` WHERE `name` like '$var%' ";
+              				$result = mysqli_query($conn, $sqls);
+            				//  echo mysqli_num_rows($result);
+              				if ( 'false'===$result ) {
+                  				printf("error: %s\n", mysqli_error($conn));
+                			}
 
-            $sqls = "SELECT `Timeslot` FROM `image` WHERE `name` = 'hello' ";
-              //$result = mysqli_query($conn, $sql);
-              //echo "<pre>Debug: $sql</pre>\m";
-              $result = mysqli_query($conn, $sqls);
-            //  echo mysqli_num_rows($result);
-              if ( 'false'===$result ) {
-                  printf("error: %s\n", mysqli_error($conn));
-                }
-            $row = mysqli_fetch_assoc($result);
+          				//  echo '<input type="desc" id="desc" name="desc" value = "$result" >;
+          				while ($row = mysqli_fetch_assoc($result)) {
 
+						if($row['Timeslot'] == "timeslot1")
+						{
+							$t1 = "11:00 - 13:45";
+							echo "<input type = 'radio' name= 'timeslot' value='timeslot1' >";
+							echo $t1;
+						}
+						if($row['Timeslot'] == "timeslot2")
+						{
+							$t2 = "15:00 - 17:30";
+							echo "<input type = 'radio' name= 'timeslot' value='timeslot2' >";
+							echo $t2;
+						}
+						if($row['Timeslot'] == "timeslot3")
+						{
+							$t3 = "18:00 - 20:30";
+							echo "<input type = 'radio' name= 'timeslot' value='timeslot3' >";
+							echo $t3;
+						}
+						if($row['Timeslot'] == "timeslot4")
+						{
+							$t4 = "21:00 - 00:00";
+							echo "<input type = 'radio' name= 'timeslot' value='timeslot4' >";
+							echo $t4;
+						}
 
-          //  echo '<input type="desc" id="desc" name="desc" value = "$result" >;
-          while ($row = mysqli_fetch_assoc($result)) {
+            				print "</br>";
+            				++$rowcount;
 
-            while(list($var, $val) = each($row)) {
-
-                if($val == "timeslot2")
-                {
-                  $c1 = "13:00 - 15:00";
-                  echo "<input type = radio name= $c1 >";
-                  echo $c1;
-                }
-                if($val == "timeslot1")
-                {
-                  $c1 = "11:00 - 13:45";
-                  echo "<input type = radio name= $c1 >";
-                  echo $c1;
-                }
-            }
-
-            echo '<br />';
-            ++$rowcount;
-
-        }
-          ?>
+        				}
+          			?>
 
 
 				<br>
