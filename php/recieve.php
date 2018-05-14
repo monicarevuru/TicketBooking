@@ -33,8 +33,8 @@ else
         		if ( mysqli_query( $conn, $sql ) )
 			{
           			echo '<script type="text/javascript">';
-                		echo 'alert("Registered Successfully");';
-                		echo 'location.href="/TicketBooking/index.html"';
+                		echo 'alert("Registered Successfully\nPlease Login to continue");';
+                		echo 'location.href="/TicketBooking/index.php"';
                 		echo '</script>';
         		}
         		else

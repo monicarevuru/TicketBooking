@@ -10,10 +10,6 @@
 </head>
 <body>
 <div class="container">
-  <!-- Trigger the modal with a button -->
- <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> id="myModal"-->
-  <!-- Modal -->
-  <!--<div class="modal fade" role="dialog">-->
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">

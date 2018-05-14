@@ -50,9 +50,8 @@
 	                  else{
 									            echo '<div><a href="register.html">Register</a></div>';
 									            echo '<div><a href="signin.html">Sign in</a></div>';
-									            echo '<div><a href="admin.html">Admin</a></div>';
 	                  }
-	                ?>-
+	                ?>
 								</div>
 							</div>
 						</div>
@@ -283,12 +282,6 @@
 
 				<div class="col-lg-2">
 					<div class="footer_column">
-						<div class="footer_title">Customer Care</div>
-						<ul class="footer_list">
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Orders</a></li>
-							<li><a href="#">FAQs</a></li>
-						</ul>
 					</div>
 				</div>
 
@@ -306,12 +299,7 @@
 					<div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
 
 						<div class="logos ml-sm-auto">
-							<ul class="logos_list">
-								<li><a href="#"><img src="images/logos_1.png" alt=""></a></li>
-								<li><a href="#"><img src="images/logos_2.png" alt=""></a></li>
-								<li><a href="#"><img src="images/logos_3.png" alt=""></a></li>
-								<li><a href="#"><img src="images/logos_4.png" alt=""></a></li>
-							</ul>
+							
 						</div>
 					</div>
 				</div>

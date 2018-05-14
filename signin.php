@@ -39,7 +39,7 @@ session_start();
 							<div class="top_bar_user">
 								<div class="user_icon"><img src="images/user.svg" alt=""></div>
 
-								<div><a href="update.html"><?php echo $_SESSION['login_user']; ?></a></div>
+								<div><a href="signin.php"><?php echo $_SESSION['login_user']; ?></a></div>
 								<div><a href="php/logout.php">Logout</a></div>
 							</div>
 						</div>
@@ -308,12 +308,6 @@ session_start();
 
 				<div class="col-lg-2">
 					<div class="footer_column">
-						<div class="footer_title">Customer Care</div>
-						<ul class="footer_list">
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Orders</a></li>
-							<li><a href="#">FAQs</a></li>
-						</ul>
 					</div>
 				</div>
 
@@ -331,12 +325,6 @@ session_start();
 					<div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
 
 						<div class="logos ml-sm-auto">
-							<ul class="logos_list">
-								<li><a href="#"><img src="images/logos_1.png" alt=""></a></li>
-								<li><a href="#"><img src="images/logos_2.png" alt=""></a></li>
-								<li><a href="#"><img src="images/logos_3.png" alt=""></a></li>
-								<li><a href="#"><img src="images/logos_4.png" alt=""></a></li>
-							</ul>
 						</div>
 					</div>
 				</div>
