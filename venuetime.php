@@ -1,3 +1,16 @@
+<?php
+session_start();
+if($_SERVER['REQUEST_METHOD'] === 'POST'){//echo 2;
+if(isset($_POST['layout'])){
+  //echo 1;
+  $ts = $_POST['timeslot'];
+  //echo $ts;
+  $_SESSION['Timeslot'] = $ts;
+  //echo $_SESSION['Timeslot'];
+header("Location:/TicketBooking/layout.php");
+}
+}
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +36,7 @@
         <div class="modal-body">
 
 		<div>
-  			<form action="layout1.php" name = "layout" method = "post">
+  			<form action = "#" name = "layout" method = "post">
       				<label for="theatre">THEATRE </label>
 				<p>Book TickZ </p><br>
   				<label for="theatre">DESCRIPTION</label>
@@ -56,19 +69,20 @@
 					          session_start();
            				  $_SESSION['movie_name'] = $_GET['bookbtn'];
            				  $var = $_SESSION['movie_name'];
-            				$sqls = "SELECT `Timeslot` FROM `image` WHERE `name` like '$var%' ";
+            				$sqls = "SELECT `Timeslot` FROM `image` WHERE `name` = '$var' ";
               				$result = mysqli_query($conn, $sqls);
             				//  echo mysqli_num_rows($result);
               				if ( 'false'===$result ) {
                   				printf("error: %s\n", mysqli_error($conn));
                 			}
-
+                      //echo '<select name="Color">';
           				//  echo '<input type="desc" id="desc" name="desc" value = "$result" >;
           				while ($row = mysqli_fetch_assoc($result)) {
 
 						if($row['Timeslot'] == "timeslot1")
 						{
 							$t1 = "11:00 - 13:45";
+
 							echo "<input type = 'radio' name= 'timeslot' value='timeslot1' required>";
 							echo $t1;
 						}
@@ -95,6 +109,7 @@
             				++$rowcount;
 
         				}
+                //echo '</select>';
           			?>
 
 
@@ -102,7 +117,7 @@
 			        <br>
 
 
-    				<input type="submit" value="Proceed">
+    				<input type="submit" name="layout" value="Proceed">
   			</form>
 		</div>
         </div>
