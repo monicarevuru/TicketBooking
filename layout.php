@@ -7,12 +7,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
 
 <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-
-      <link rel="stylesheet" href="css/layout.css">
-
-
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+      <link type="text/css" rel="stylesheet" href="css/layout.css">
 </head>
 
 <body>
@@ -41,22 +37,36 @@
         </li>
         <li class="seat">
           <?php
+            session_start();
             include("php/config.php");
+            $mname = $_SESSION['movie_name'];
             mysqli_select_db( $conn, $mysqldb);
 
-          $query = "SELECT * FROM seat_layout WHERE Seat_Status = 1";
-$result = mysqli_query($conn,$query);
-$display = (mysql_num_rows($result[0]) == 1);
-//echo $display;
-$disable = $display?'':'disabled="disabled"';
-
-   echo '<input name="ch1" type="checkbox" id="A1" value="" $disable/>';
-        //echo ' <input type="checkbox" <var>disable</var> id="1D" />';
+          $query = "SELECT `seat_status` FROM `seat_layout` WHERE `name`= 'Avengers' and `seat_name`='1D'";
+          $result = mysqli_query($conn,$query);
+          $row = mysqli_fetch_assoc($result);
+          //echo mysqli_num_rows($result);
+          $display = $row[seat_status];
+          //echo $display;
+          $disable = $display?'disabled':"";
+          echo '<input type="checkbox" '.$disable.' id="1D" value="1D" />';
         ?>
           <label for="1D">X</label>
         </li>
         <li class="seat">
-          <input type="checkbox" id="1E" />
+          <?php
+            include("php/config.php");
+            mysqli_select_db( $conn, $mysqldb);
+
+          $query = "SELECT `seat_status` FROM `seat_layout` WHERE `name`= '$mname' and `seat_name`='1D'";
+          $result = mysqli_query($conn,$query);
+          $row = mysqli_fetch_assoc($result);
+          //echo mysqli_num_rows($result);
+          $display = $row[seat_status];
+          //echo $display;
+          $disable = $display?'disabled':"";
+          echo '<input type="checkbox" '.$disable.' id="1E" value="1E" />';
+        ?>
           <label for="1E">1E</label>
         </li>
         <li class="seat">
@@ -352,6 +362,3 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #02b6f7;
 }
-
-</style>
-</html>
