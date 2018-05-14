@@ -23,7 +23,7 @@
         <div class="modal-body">
 
 		<div>
-  			<form action="layout.php" name = "layout" method = "post">
+  			<form action="layout1.php" name = "layout" method = "post">
       				<label for="theatre">THEATRE </label>
 				<p>Book TickZ </p><br>
   				<label for="theatre">DESCRIPTION</label>
@@ -69,25 +69,25 @@
 						if($row['Timeslot'] == "timeslot1")
 						{
 							$t1 = "11:00 - 13:45";
-							echo "<input type = 'radio' name= 'timeslot' value='timeslot1' >";
+							echo "<input type = 'radio' name= 'timeslot' value='timeslot1' required>";
 							echo $t1;
 						}
 						if($row['Timeslot'] == "timeslot2")
 						{
 							$t2 = "15:00 - 17:30";
-							echo "<input type = 'radio' name= 'timeslot' value='timeslot2' >";
+							echo "<input type = 'radio' name= 'timeslot' value='timeslot2' required>";
 							echo $t2;
 						}
 						if($row['Timeslot'] == "timeslot3")
 						{
 							$t3 = "18:00 - 20:30";
-							echo "<input type = 'radio' name= 'timeslot' value='timeslot3' >";
+							echo "<input type = 'radio' name= 'timeslot' value='timeslot3' required>";
 							echo $t3;
 						}
 						if($row['Timeslot'] == "timeslot4")
 						{
 							$t4 = "21:00 - 00:00";
-							echo "<input type = 'radio' name= 'timeslot' value='timeslot4' >";
+							echo "<input type = 'radio' name= 'timeslot' value='timeslot4' required>";
 							echo $t4;
 						}
 

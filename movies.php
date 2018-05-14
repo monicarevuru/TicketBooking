@@ -39,8 +39,19 @@
 								</div>
 								<div class="top_bar_user">
 									<div class="user_icon"><img src="images/user.svg" alt=""></div>
-									<div><a href="register.html">Register</a></div>
-									<div><a href="signin.html">Sign in</a></div>
+									<?php
+										include("php/config.php");
+										session_start();
+										if( isset($_SESSION["login_user"]) ){
+											echo '<div><a href="#"> '.$_SESSION["login_user"].'</a></div>';
+											echo '<div><a href="php/logout.php">Logout</a></div>';
+										}
+										else{
+											echo '<div><a href="register.html">Register</a></div>';
+											echo '<div><a href="signin.html">Sign in</a></div>';
+										}
+									 ?>
+
 								</div>
 							</div>
 						</div>
@@ -57,7 +68,7 @@
 						<!-- Logo -->
 						<div class="col-lg-2 col-sm-3 col-3 order-1">
 							<div class="logo_container">
-								<div class="logo"><a href="index.html">BookTickZ</a></div>
+								<div class="logo"><a href="index.php">BookTickZ</a></div>
 							</div>
 						</div>
 
@@ -159,7 +170,7 @@
 	<!-- Blog -->
 
 	<div class="blog">
-		<div class="cont">
+		<div class="container">
 					<center>
 
 							<?php
@@ -174,14 +185,14 @@
 
 
 							//echo "<table border='1' table style= margin:0px' auto width='200' align='center'><tr></tr>";
-							echo '<form action="venuetime.php">';
+							echo '<form action="venuetime.php" method = "get">';
 							while($row = mysqli_fetch_array($result))
 							{
-								echo '<div class="row">';
-								echo '<div class="col">';
-								echo '<div class="blog_posts d-flex flex-row align-items-start justify-content-between">';
 								echo '<div class="blog_post">';
-								echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'" alt="HTML5 Icon" style="width:300px;height:300px;padding:20px"/><button class="blog_button" onclick = "myFunction()">'.$row["name"].'</button>';
+								echo '<div class="col">';
+								echo '<div class="row">';
+								echo '<div class="blog_posts d-flex flex-row align-items-start justify-content-between">';
+								echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'" alt="HTML5 Icon" style="width:350px;height:300px;padding:20px"/><button type="submit" name="bookbtn" class="blog_button" value="'.$row["name"].'">'.$row["name"].'</button>';
 								echo '</div>';
 								echo '</div>';
 								echo '</div>';
