@@ -11,10 +11,15 @@ if ( $conn ) {
     printf("error: %s\n", mysqli_error($conn));
   }
 
-  $s ="SELECT * from `BookTickz`.`user` where `user_name`= '$username'";
+$s ="SELECT * from `BookTickz`.`user` where `user_name`= '$username'";
 $result = mysqli_query( $conn, $s);
+$row = mysqli_fetch_assoc($result);
 
-echo "rdsuccess";
+echo '<script type="text/javascript">';
+echo 'alert("The amount debited from Wallet is: '.$amount.'\n ");';
+echo 'alert("Current Wallet Balance: '.$row["wallet_amount"].'");';
+echo 'location.href="/TicketBooking/index.php"';
+echo '</script>';
 
 
 echo $row;
