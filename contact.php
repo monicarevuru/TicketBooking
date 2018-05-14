@@ -37,8 +37,19 @@
 							</div>
 							<div class="top_bar_user">
 								<div class="user_icon"><img src="images/user.svg" alt=""></div>
-								<div><a href="register.html">Register</a></div>
-								<div><a href="signin.html">Sign in</a></div>
+								<?php
+									include("php/config.php");
+									session_start();
+									if( isset($_SESSION["login_user"]) ){
+										echo '<div><a href="#"> '.$_SESSION["login_user"].'</a></div>';
+										echo '<div><a href="php/logout.php">Logout</a></div>';
+										echo '<div><a href="php/showamount.php"><img src="images/index.jpg"></div>';
+									}
+									else{
+														echo '<div><a href="register.html">Register</a></div>';
+														echo '<div><a href="signin.html">Sign in</a></div>';
+									}
+								?>
 							</div>
 						</div>
 					</div>
@@ -55,7 +66,7 @@
 					<!-- Logo -->
 					<div class="col-lg-2 col-sm-3 col-3 order-1">
 						<div class="logo_container">
-							<div class="logo"><a href="index.html">BookTickZ</a></div>
+							<div class="logo"><a href="index.php">BookTickZ</a></div>
 						</div>
 					</div>
 
@@ -84,10 +95,10 @@
 
 							<div class="main_nav_menu ml-auto">
 								<ul class="standard_dropdown main_nav_dropdown">
-									<li><a href="index.html">Home<i class="fas fa-chevron-down"></i></a></li>
+									<li><a href="index.php">Home<i class="fas fa-chevron-down"></i></a></li>
 									<li><a href="movies.php">Movies<i class="fas fa-chevron-down"></i></a></li>
-									<li><a href="blog.html">About Us<i class="fas fa-chevron-down"></i></a></li>
-									<li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
+									<li><a href="blog.php">About Us<i class="fas fa-chevron-down"></i></a></li>
+									<li><a href="contact.php">Contact<i class="fas fa-chevron-down"></i></a></li>
 
 								</ul>
 							</div>
@@ -154,36 +165,9 @@
 		</div>
 	</div>
 
-	<!-- Contact Form -->
-
-	<div class="contact_form">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-10 offset-lg-1">
-					<div class="contact_form_container">
-						<div class="contact_form_title">Get in Touch</div>
-
-						<form action="php/contact.php" method="post" id="contact_form" >
-							<div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
-								<input type="text" id="contact_form_name" name="contact_form_name" class="contact_form_name input_field" placeholder="Your name" required="required" data-error="Name is required.">
-								<input type="text" id="contact_form_email" name="contact_form_email" class="contact_form_email input_field" placeholder="Your email" required="required" data-error="Email is required.">
-								<input type="text" id="contact_form_phone" name="contact_form_phone" class="contact_form_phone input_field" placeholder="Your phone number">
-							</div>
-							<div class="contact_form_text">
-								<textarea id="contact_form_message" name="contact_form_message" class="text_field contact_form_message" rows="4" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
-							</div>
-							<div class="contact_form_button">
-								<button type="submit" class="button contact_submit_button">Send Message</button>
-							</div>
-						</form>
-
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="panel"></div>
-	</div>
-
+	<br>
+	<br>
+	<br>
 	<!-- Map -->
 
 					<div id="map"></div>
@@ -228,12 +212,7 @@
 
 				<div class="col-lg-2">
 					<div class="footer_column">
-						<div class="footer_title">Customer Care</div>
-						<ul class="footer_list">
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Orders</a></li>
-							<li><a href="#">FAQs</a></li>
-						</ul>
+
 					</div>
 				</div>
 

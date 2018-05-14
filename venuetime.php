@@ -67,6 +67,14 @@ header("Location:/TicketBooking/layout.php");
             			<?php
             				include("php/config.php");
 					          session_start();
+                    if( !isset($_SESSION["login_user"]) )
+                    {
+                        echo '<script type="text/javascript">';
+                        echo 'alert("Sign in Required.");';
+                        echo 'location.href="/TicketBooking/index.php"';
+                        echo '</script>';
+                    }
+
            				  $_SESSION['movie_name'] = $_GET['bookbtn'];
            				  $var = $_SESSION['movie_name'];
             				$sqls = "SELECT `Timeslot` FROM `image` WHERE `name` = '$var' ";

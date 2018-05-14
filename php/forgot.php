@@ -28,21 +28,27 @@ if ( $conn ) {
 //Set the password of your gmail address here
     		$mail->Password = 'amma12345678';
     		if(!$mail->send())
-		{
-			echo '<script type="text/javascript">';
+				{
+					echo '<script type="text/javascript">';
     			echo 'alert("Email is not sent.Email error: '. $mail->ErrorInfo .' ");';
-    			echo 'location.href="/TicketBooking/signin.html"';
+    			echo 'location.href="/TicketBooking/forgot_pass.html"';
     			echo '</script>';
     		}
-		else
-		{
-			echo '<script type="text/javascript">';
-    			echo 'alert("Check Your Email for the Password");';
-    			echo 'location.href="/TicketBooking/signin.html"';
-    			echo '</script>';
-		}
+				else
+				{
+						echo '<script type="text/javascript">';
+    				echo 'alert("Check Your Email for the Password");';
+    				echo 'location.href="/TicketBooking/signin.html"';
+    				echo '</script>';
+				}
 
   	}
   	else
-  		echo "no user found";
+		{
+					echo '<script type="text/javascript">';
+					echo 'alert("No user found");';
+					echo 'location.href="/TicketBooking/forgot_pass.html"';
+					echo '</script>';
+		}
+
 ?>

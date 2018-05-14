@@ -7,8 +7,10 @@ include("config.php");
        $sqls = "SELECT * FROM `BookTickz`.`image` WHERE `name`= '$dmovie'";
        $result = mysqli_query( $conn, $sqls);
      	$row = mysqli_fetch_assoc($result);
-     	if( mysqli_num_rows( $result ) > 0) 
+     	if( mysqli_num_rows( $result ) > 0)
 	{
+          $sql1 = "DELETE FROM seat_layout WHERE name='$dmovie'";
+          $res = mysqli_query($conn, $sql1);
         	$sql = "DELETE FROM image WHERE name='$dmovie'";
 
         	if (mysqli_query($conn, $sql)) {
