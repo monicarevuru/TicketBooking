@@ -296,4 +296,11 @@ $description=$_POST['desc'];
     //   echo "Please select an image file to upload.";
    //}
 }
+else {
+  echo '<script type="text/javascript">';
+    echo 'alert("Movie upload failed, Please select image file.");';
+  echo 'location.href="/TicketBooking/upload.html"';
+  echo '</script>';
+
+}
 ?>
