@@ -37,8 +37,19 @@
 							</div>
 							<div class="top_bar_user">
 								<div class="user_icon"><img src="images/user.svg" alt=""></div>
-								<div><a href="register.html">Register</a></div>
-								<div><a href="signin.html">Sign in</a></div>
+								<?php
+									include("php/config.php");
+									session_start();
+									if( isset($_SESSION["login_user"]) ){
+										echo '<div><a href="#"> '.$_SESSION["login_user"].'</a></div>';
+										echo '<div><a href="php/logout.php">Logout</a></div>';
+										echo '<div><a href="php/showamount.php"><img src="images/index.jpg"></div>';
+									}
+									else{
+														echo '<div><a href="register.html">Register</a></div>';
+														echo '<div><a href="signin.html">Sign in</a></div>';
+									}
+								?>
 							</div>
 						</div>
 					</div>
@@ -87,7 +98,7 @@
 									<li><a href="index.php">Home<i class="fas fa-chevron-down"></i></a></li>
 									<li><a href="movies.php">Movies<i class="fas fa-chevron-down"></i></a></li>
 									<li><a href="blog.php">About Us<i class="fas fa-chevron-down"></i></a></li>
-									<li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
+									<li><a href="contact.php">Contact<i class="fas fa-chevron-down"></i></a></li>
 
 								</ul>
 							</div>
@@ -201,12 +212,7 @@
 
 				<div class="col-lg-2">
 					<div class="footer_column">
-						<div class="footer_title">Customer Care</div>
-						<ul class="footer_list">
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Orders</a></li>
-							<li><a href="#">FAQs</a></li>
-						</ul>
+
 					</div>
 				</div>
 

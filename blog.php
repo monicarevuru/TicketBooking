@@ -46,6 +46,7 @@
 	                  if( isset($_SESSION["login_user"]) ){
 	                    echo '<div><a href="#"> '.$_SESSION["login_user"].'</a></div>';
 	                    echo '<div><a href="php/logout.php">Logout</a></div>';
+											echo '<div><a href="php/showamount.php"><img src="images/index.jpg"></div>';
 	                  }
 	                  else{
 									            echo '<div><a href="register.html">Register</a></div>';
@@ -100,7 +101,7 @@
 										<li><a href="index.php">Home<i class="fas fa-chevron-down"></i></a></li>
 										<li><a href="movies.php">Movies<i class="fas fa-chevron-down"></i></a></li>
 										<li><a href="blog.php">About Us<i class="fas fa-chevron-down"></i></a></li>
-										<li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
+										<li><a href="contact.php">Contact<i class="fas fa-chevron-down"></i></a></li>
 									</ul>
 								</div>
 
@@ -299,7 +300,7 @@
 					<div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
 
 						<div class="logos ml-sm-auto">
-							
+
 						</div>
 					</div>
 				</div>

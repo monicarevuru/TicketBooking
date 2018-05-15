@@ -19,6 +19,7 @@ session_start();
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 
+
 </head>
 
 <body>
@@ -41,6 +42,9 @@ session_start();
 
 								<div><a href="signin.php"><?php echo $_SESSION['login_user']; ?></a></div>
 								<div><a href="php/logout.php">Logout</a></div>
+								<div><a href="php/showamount.php"><img src="images/index.jpg"></div>
+
+
 							</div>
 						</div>
 					</div>
@@ -106,7 +110,7 @@ session_start();
 									<li><a href="index.php">Home<i class=""></i></a></li>
 									<li><a href="movies.php">Movies<i class=""></i></a></li>
 									<li><a href="blog.php">About Us<i class=""></i></a></li>
-									<li><a href="contact.html">Contact<i class=""></i></a></li>
+									<li><a href="contact.php">Contact<i class=""></i></a></li>
 
 								</ul>
 							</div>

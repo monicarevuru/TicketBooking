@@ -46,6 +46,7 @@
                   if( isset($_SESSION["login_user"]) ){
                     echo '<div><a href="#"> '.$_SESSION["login_user"].'</a></div>';
                     echo '<div><a href="php/logout.php">Logout</a></div>';
+                    echo '<div><a href="php/showamount.php"><img src="images/index.jpg"></div>';
                   }
                   else{
 								            echo '<div><a href="register.html">Register</a></div>';
@@ -118,7 +119,7 @@
 									<li><a href="index.php">Home<i class=""></i></a></li>
 									<li><a href="movies.php">Movies<i class=""></i></a></li>
 									<li><a href="blog.php">About Us<i class=""></i></a></li>
-									<li><a href="contact.html">Contact<i class=""></i></a></li>
+									<li><a href="contact.php">Contact<i class=""></i></a></li>
 
 								</ul>
 							</div>
@@ -320,12 +321,7 @@
 
 				<div class="col-lg-2">
 					<div class="footer_column">
-						<div class="footer_title">Customer Care</div>
-						<ul class="footer_list">
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Orders</a></li>
-							<li><a href="#">FAQs</a></li>
-						</ul>
+
 					</div>
 				</div>
 
@@ -343,12 +339,7 @@
 					<div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
 
 						<div class="logos ml-sm-auto">
-							<ul class="logos_list">
-								<li><a href="#"><img src="images/logos_1.png" alt=""></a></li>
-								<li><a href="#"><img src="images/logos_2.png" alt=""></a></li>
-								<li><a href="#"><img src="images/logos_3.png" alt=""></a></li>
-								<li><a href="#"><img src="images/logos_4.png" alt=""></a></li>
-							</ul>
+
 						</div>
 					</div>
 				</div>
