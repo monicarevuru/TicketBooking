@@ -19,7 +19,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
 	}
 	else
 	{
-      unset($_SESSION['seats']);
   		echo '<script type="text/javascript">';
   		echo 'alert("Password is incorrect");';
   		echo 'location.href="/TicketBooking/php/ConfirmPassword.php"';
