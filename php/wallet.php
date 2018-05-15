@@ -2,7 +2,8 @@
 session_start();
 include("config.php");
 $username = $_SESSION['login_user'];
-$amount = '1000';
+$seats = $_SESSION['seats'];
+$amount = sizeof($seats)*100;
 mysqli_select_db( $conn, $mysqldb);
 if ( $conn ) {
   $sql = "UPDATE `BookTickz`.`user` set `wallet_amount`=`wallet_amount` - $amount where `user_name`= '$username'";
@@ -18,11 +19,13 @@ $row = mysqli_fetch_assoc($result);
 echo '<script type="text/javascript">';
 echo 'alert("The amount debited from Wallet is: '.$amount.'\n ");';
 echo 'alert("Current Wallet Balance: '.$row["wallet_amount"].'");';
-echo 'location.href="/TicketBooking/index.php"';
 echo '</script>';
-
-
-echo $row;
+//echo $row;
+foreach($seats as $name){
+  $sql = "UPDATE `BookTickz`.`seat_layout` set `seat_status`=1 where `seat_name`='$name'";
+  $result = mysqli_query($conn,$sql);
+}
+header("Location:/TicketBooking/movies.php");
 }
 else
 echo 'Connection failed';
