@@ -1,3 +1,16 @@
+<?php
+session_start();
+if($_SERVER['REQUEST_METHOD'] === 'POST'){//echo 2;
+if(isset($_POST['BookSeats'])){
+  //echo 1;
+  $ts = $_POST['seats'];
+  //echo $ts;
+  $_SESSION['seats'] = $ts;
+  //echo $_SESSION['Timeslot'];
+header("Location:/TicketBooking/php/ConfirmPassword.php");
+}
+}
+?>
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -62,7 +75,7 @@
   <!--<div class="exit exit--front fuselage">
 
   </div> -->
-  <form action="ConfirmPassword.html" name = "BookSeats" method = "post">
+  <form action="" name = "BookSeats" method = "post">
   <ol class="cabin fuselage">
     <?php
       session_start();
@@ -100,7 +113,7 @@
       echo '</li>';
 }
 
-$_SESSION['seats'] = $seats;
+
 
      ?>
   </ol>
@@ -114,7 +127,7 @@ $_SESSION['seats'] = $seats;
           <br>
 
 
-        <center><input type="submit" value="Make Payment" name ="makePayment"></center>
+        <center><input type="submit" value="Make Payment" name ="BookSeats"></center>
     </form>
 </div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
