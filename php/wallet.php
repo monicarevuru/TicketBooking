@@ -3,6 +3,9 @@ session_start();
 include("config.php");
 $username = $_SESSION['login_user'];
 $seats = $_SESSION['seats'];
+$mname = $_SESSION['movie_name'];
+//echo $mname;
+$timeslot = $_SESSION['Timeslot'];
 $amount = sizeof($seats)*100;
 mysqli_select_db( $conn, $mysqldb);
 if ( $conn ) {
@@ -22,9 +25,12 @@ echo 'alert("Current Wallet Balance: '.$row["wallet_amount"].'");';
 echo '</script>';
 //echo $row;
 foreach($seats as $name){
-  $sql = "UPDATE `BookTickz`.`seat_layout` set `seat_status`=1 where `seat_name`='$name'";
+  $sql = "UPDATE `BookTickz`.`seat_layout` set `seat_status`=1 where `seat_name`='$name' and `name`='$mname' and `Timeslot` = '$timeslot'";
   $result = mysqli_query($conn,$sql);
 }
+unset($_SESSION['seats']);
+unset($_SESSION['movie_name']);
+unset($_SESSION['Timeslot']);
 header("Location:/TicketBooking/movies.php");
 }
 else
